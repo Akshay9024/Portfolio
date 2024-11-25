@@ -21,6 +21,8 @@
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "yarn run react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "postcss src/css/tailwind.css -o src/css/main.css"
@@ -44,9 +46,15 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
     "@tailwindcss/forms": "^0.5.2",
     "@testing-library/dom": "^8.20.0",
     "autoprefixer": "^10.4.7",
+    "babel-preset-react-app": "^10.0.1",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.0.24"
   }
